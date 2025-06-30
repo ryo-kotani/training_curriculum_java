@@ -30,7 +30,7 @@ public class CalendarsController {
   @GetMapping("/")
   public String index(Model model) {
     model.addAttribute("planForm", new PlanForm());
-    List<Map<String, Object>> weekDays = get_week();
+    List<Map<String, Object>> weekDays = getWeek();
     model.addAttribute("weekDays", weekDays);
     return "calendars/index";
   }
@@ -47,7 +47,7 @@ public class CalendarsController {
     return "redirect:/calendars";
   }
 
-  private List<Map<String, Object>> get_week() {
+  private List<Map<String, Object>> getWeek() {
     List<Map<String, Object>> weekDays = new ArrayList<>();
 
     LocalDate todaysDate = LocalDate.now();
