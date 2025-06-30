@@ -24,7 +24,7 @@
       <div th:each="day : ${weekDays}">
         <div class="item">
           <div class="date">
-            <span th:text="${day.month}+'/'+${day.date}"></span>
+            <span th:text="${day.month}+'/'+${day.date}+${day.wday}"></span>
           </div>
           <ul class="content">
             <li th:each="plan : ${day.plans}" class="plan-list">・<span th:text="${plan}"></span></li>
